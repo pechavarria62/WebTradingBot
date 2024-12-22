@@ -4,7 +4,9 @@ from stream_example.streamer import run_streamer
 
 if __name__ == '__main__':
     api = OandaApi()    
-    instrumentCollection.LoadInstruments("./data")
-    run_streamer()
+    data = api.get_account_instruments()
+    [print(x['name']) for x in data]
+    # instrumentCollection.LoadInstruments("./data")
+    # run_streamer()
     
     
