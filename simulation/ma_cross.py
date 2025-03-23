@@ -141,7 +141,7 @@ def analyse_pair(instrument, granularity, ma_long, ma_short, filepath):
 
 
 def run_ma_sim(curr_list=["CAD", "JPY", "GBP", "NZD"],
-                granularity=["H1"],
+                granularity=["H1", "H4"],
                 ma_long=[20,40,80],
                 ma_short=[10,20],
                 filepath="./data"):
@@ -152,7 +152,7 @@ def run_ma_sim(curr_list=["CAD", "JPY", "GBP", "NZD"],
                 pair = f"{p1}_{p2}"
                 if pair in ic.instruments_dict.keys():
                     analyse_pair(ic.instruments_dict[pair], g, ma_long, ma_short, filepath)
-        create_ma_res(g)
+        # create_ma_res(g)
         
         
         
