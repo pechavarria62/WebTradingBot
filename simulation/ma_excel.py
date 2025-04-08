@@ -2,8 +2,9 @@ import pandas as pd
 
 WIDTHS = {
     'L:L' : 20,
-    'B:F' : 9
-}
+    'B:F' : 11,
+    'I:I' : 20
+    }
 
 def set_widths(pair, writer):
     worksheet = writer.sheets[pair]
@@ -26,7 +27,7 @@ def add_chart(pair, cross, df, writer):
     worksheet = writer.sheets[pair]
 
     chart = get_line_chart(workbook, 1, df.shape[0], 11, 12, 
-                           f"GAIN_C for {pair} {cross}", pair )
+                        f"GAIN_C for {pair} {cross}", pair )
     chart.set_size({'x_scale' : 2.5, 'y_scale' : 2.5})
     worksheet.insert_chart('O1', chart)
 
@@ -69,7 +70,7 @@ def create_excel(df_ma_res, df_ma_trades, granularity):
         df_ma_trades[df_ma_trades.granularity == granularity].copy(), 
         writer)
    
-    writer.save()
+    writer.close()
 
 def create_ma_res(granularity):
     df_ma_res = pd.read_pickle("./data/ma_res.pkl")
