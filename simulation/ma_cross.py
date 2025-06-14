@@ -152,7 +152,7 @@ def run_ma_sim(curr_list=["CAD", "JPY", "GBP", "NZD"],
                 pair = f"{p1}_{p2}"
                 if pair in ic.instruments_dict.keys():
                     analyse_pair(ic.instruments_dict[pair], g, ma_long, ma_short, filepath)
-        # create_ma_res(g)
+        create_ma_res(g)
         
         
         

@@ -6,10 +6,10 @@ from dateutil import parser
 from infrastructure.collect_data import run_collection
 
 if __name__ == '__main__':
-    api = OandaApi()
+    # api = OandaApi()
 
-    instrumentCollection.LoadInstruments("./data")
-    run_collection(instrumentCollection,api)
+    # instrumentCollection.LoadInstruments("./data")
+    # run_collection(instrumentCollection,api)
 
     # dfr = parser.parse("2023-04-01T01:00:00Z")
     # dto = parser.parse("2023-04-28T02:00:00Z")
@@ -27,4 +27,5 @@ if __name__ == '__main__':
     # instrumentCollection.LoadInstruments("./data")
     # run_streamer()
     # run_ma_sim(curr_list=["EUR","USD","GBP","JPY","AUD","CAD"])
+    run_ma_sim()
     
